@@ -2,6 +2,7 @@ package fsm
 
 import "errors"
 // test comment 
+// test comment 2
 type State string
 
 // Guard provides protection against transitioning to the goal State.
