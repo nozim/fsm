@@ -2,6 +2,7 @@ FSM
 ===
 
 
+test line 
 
 
 [ ![Codeship Status for ryanfaerman/fsm](https://codeship.com/projects/7529e360-b173-0132-b520-32bd639983ea/status?branch=master)](https://codeship.com/projects/69855) [![GoDoc](https://godoc.org/github.com/ryanfaerman/fsm?status.png)](https://godoc.org/github.com/ryanfaerman/fsm)
