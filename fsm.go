@@ -9,6 +9,10 @@ type State string
 // Returning true/false indicates if the transition is permitted or not.
 type Guard func(subject Stater, goal State) error
 
+func User1Added() int{
+ return 2+2 
+ }
+
 var (
 	InvalidTransition = errors.New("invalid transition")
 )
