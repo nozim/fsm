@@ -13,6 +13,10 @@ func User1Added() int{
  return 2+2 
  }
 
+func User2Added() string 
+	return "test "
+}
+
 var (
 	InvalidTransition = errors.New("invalid transition")
 )
