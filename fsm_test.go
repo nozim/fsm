@@ -18,7 +18,11 @@ func (t *Thing) CurrentState() fsm.State { return t.State }
 func (t *Thing) SetState(s fsm.State)    { t.State = s }
 
 func TestSomething(t *testing.T) {
-st.Expect(t,2+2,4)	
+  st.Expect(t,2+2,4)	
+}
+
+func TestSomeOtherThing(t *testing.T) {
+  st.Expect(t, 5, 10-5)
 }
 
 func TestRulesetTransitions(t *testing.T) {
