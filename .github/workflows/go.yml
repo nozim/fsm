@@ -29,10 +29,16 @@ jobs:
         gotestsum --junitfile test-report.xml
       continue-on-error: true
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: my-artifact
-        path: test-report.xml
+    - name: Get Workflow Run Metadata
+      id: metadata
+      run: echo "::set-output name=run_id::${{ github.run_id }}"
+
+    - name: Send test report 
+      run: | 
+        curl \ 
+        -X POST -H "Content-Type: application/xml" \
+        -d "@./test-report.xml"  \
+        "https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/${{ steps.metadata.outputs.run_id }}"
     - name: Build
       run: go build -v ./...
 
