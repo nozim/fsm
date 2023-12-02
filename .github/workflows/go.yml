@@ -27,18 +27,14 @@ jobs:
     - name: Run Go tests and generate JUnit report
       run: |
         gotestsum --junitfile test-report.xml
-      continue-on-error: true
 
     - name: Get Workflow Run Metadata
       id: metadata
       run: echo "::set-output name=run_id::${{ github.run_id }}"
 
     - name: Send test report 
-      run: | 
-        curl -X POST \ 
-        -H "Content-Type: application/xml" \
-        -d "@./test-report.xml"  \
-        "https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/2000"
+      run: curl -X POST -H "Content-Type: application/xml" -d "@./test-report.xml"  "https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/2000"
+    
     - name: Build
       run: go build -v ./...
 
