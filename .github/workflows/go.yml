@@ -25,7 +25,7 @@ jobs:
     
     - name: Get current branch
       run: |
-        echo "Current branch: ${{ env.GITHUB_HEAD_REF }}"
+        echo "Current branch: ${{ github.ref_name }}"
     
     - name: Run Go tests and generate JUnit report
       run: |
