@@ -22,8 +22,10 @@ jobs:
     - name: Install Reporter
       run: |
         go install gotest.tools/gotestsum@latest
+    
     - name: Get current branch
-      run: echo "Current branch: ${{ env.GITHUB_HEAD_REF }}"
+      run: |
+        echo "Current branch: ${{ env.GITHUB_HEAD_REF }}"
     
     - name: Run Go tests and generate JUnit report
       run: |
