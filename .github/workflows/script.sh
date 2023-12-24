@@ -12,4 +12,4 @@ echo $current_run_id
 curl -X POST \
       -H "Content-Type: application/xml" \
       -d "@./test-report.xml" \
-      https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/$repo/$current_branch/$current_run_id
+      https://b57b-2001-818-d998-b00-f0b8-1fa4-f1fd-159a.ngrok-free.app/reports/$repo/$current_branch/$current_run_id
