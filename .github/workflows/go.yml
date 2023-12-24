@@ -23,30 +23,13 @@ jobs:
       run: |
         go install gotest.tools/gotestsum@latest
     
-    - name: Get current branch
-      run: |
-        echo "Current branch: ${{ github.ref_name }}"
-    
-    - name: Get current repo
-      run: |
-        echo "Current repo: ${{ github.event.repository.full_name }}"
-    
     - name: Run Go tests and generate JUnit report
       run: |
         gotestsum --junitfile test-report.xml
 
-    - name: Get Workflow Run Metadata
-      id: metadata
-      run: echo "::set-output name=run_id::${{ github.run_id }}"
-
-    - name: Send test report 
+    - name: Collect metadata and send report 
       run: |
-         repo=${{ github.event.repository.full_name }}
-         rep_mod=echo $repo | tr "/" "-"
-         curl -X POST \
-            -H "Content-Type: application/xml" \
-            -d "@./test-report.xml" \
-            https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/$rep_mod/${{ github.ref_name }}/${{ github.run_id }}
+        bash ./script.sh 
     
     - name: Build
       run: go build -v ./...
