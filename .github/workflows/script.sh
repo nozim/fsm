@@ -5,9 +5,6 @@ current_branch=${GITHUB_REF##*/}
 current_run_id=${GITHUB_RUN_ID}
 
 repo=$(echo $current_repo | tr "/" "-")
-echo $repo
-echo $current_branch
-echo $current_run_id
 
 curl -X POST \
       -H "Content-Type: application/xml" \
