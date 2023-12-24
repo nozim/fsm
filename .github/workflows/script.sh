@@ -9,7 +9,7 @@ echo $repo
 echo $branch 
 echo $run_id 
 
-current_repo=${GITHUB_REPOSITORY#*/}
+current_repo=${GITHUB_REPOSITORY##/}
 current_branch=${GITHUB_REF##*/}
 current_run_id=${GITHUB_RUN_ID}
 
