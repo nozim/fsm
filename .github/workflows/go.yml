@@ -22,12 +22,7 @@ jobs:
     - name: Install Reporter
       run: |
         go install gotest.tools/gotestsum@latest
-    
-    - name: Get current repo
-      id: reponame
-      run: |
-        echo "::set-output repo_name=$(echo ${{ github.event.repository.full_name }} | tr "/" "-" )"
-    
+        
     - name: Run Go tests and generate JUnit report
       run: |
         gotestsum --junitfile test-report.xml
@@ -39,11 +34,12 @@ jobs:
     - name: Send test report 
       run: |
          repo=${{ github.event.repository.full_name }}
-         rep_mod=echo $repo | tr "/" "-"
+         rep_mod=$(echo $repo | tr "/" "-")
+         echo $repo_mod
          curl -X POST \
             -H "Content-Type: application/xml" \
             -d "@./test-report.xml" \
-            https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/${{steps.repo_name.outputs.repo_name}}/${{ github.ref_name }}/${{ github.run_id }}
+            https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/$(echo $repo_mod)/${{ github.ref_name }}/${{ github.run_id }}
     
     - name: Build
       run: go build -v ./...
