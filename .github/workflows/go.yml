@@ -30,11 +30,7 @@ jobs:
     
     - name: Collect metadata and send report 
       run: |
-        echo $PWD 
-
-    - name: Collect metadata and send report 
-      run: |
-        bash ./script.sh 
+        bash ./.github/workflows/script.sh 
             
     - name: Build
       run: go build -v ./...
