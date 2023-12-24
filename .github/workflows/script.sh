@@ -9,6 +9,14 @@ echo $repo
 echo $branch 
 echo $run_id 
 
+current_repo=${GITHUB_REPOSITORY#*/}
+current_branch=${GITHUB_REF##*/}
+current_run_id=${GITHUB_RUN_ID}
+
+echo $current_repo
+echo $current_branch
+echo $current_run_id
+
 curl -X POST \
       -H "Content-Type: application/xml" \
       -d "@./test-report.xml" \
