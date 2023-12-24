@@ -22,7 +22,7 @@ jobs:
     - name: Install Reporter
       run: |
         go install gotest.tools/gotestsum@latest
-    
+
     - name: Run Go tests and generate JUnit report
       run: |
         gotestsum --junitfile test-report.xml
@@ -30,7 +30,7 @@ jobs:
     - name: Collect metadata and send report 
       run: |
         bash ./script.sh 
-    
+            
     - name: Build
       run: go build -v ./...
 
