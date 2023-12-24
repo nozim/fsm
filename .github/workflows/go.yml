@@ -43,7 +43,7 @@ jobs:
          curl -X POST \
             -H "Content-Type: application/xml" \
             -d "@./test-report.xml" \
-            https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/${{steps.repo_name.ouputs.repo_name}}/${{ github.ref_name }}/${{ github.run_id }}
+            https://d620-2001-818-d998-b00-e5d5-332d-f89-e699.ngrok.io/reports/${{steps.repo_name.outputs.repo_name}}/${{ github.ref_name }}/${{ github.run_id }}
     
     - name: Build
       run: go build -v ./...
