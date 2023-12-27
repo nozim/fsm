@@ -1,12 +1,11 @@
-#!/bin/bash 
+#!/bin/bash
 
 current_repo=${GITHUB_REPOSITORY##/}
 current_branch=${GITHUB_REF##*/}
 current_run_id=${GITHUB_RUN_ID}
 
-repo=$(echo $current_repo | tr "/" "-")
-
+data=$(cat ./test-report.xml | base64)
 curl -X POST \
-      -H "Content-Type: application/xml" \
-      -d "@./test-report.xml" \
-      https://b57b-2001-818-d998-b00-f0b8-1fa4-f1fd-159a.ngrok-free.app/reports/$repo/$current_branch/$current_run_id
+  -H "Content-Type: application/json" \
+  -d "{\"repo_name\":\"$current_repo\", \"branch\": \"$current_branch\", \"run_id\": \"$run_id\", \"report_body\": \"$data\"}" \
+  https://113d-89-114-64-217.ngrok-free.app/reports
