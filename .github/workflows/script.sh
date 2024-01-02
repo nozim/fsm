@@ -12,4 +12,4 @@ echo $payload
 curl -X POST \
   -H "Content-Type: application/json" \
   -d $payload \
-  https://113d-89-114-64-217.ngrok-free.app/reports
+  https://419d-2001-818-d998-b00-746e-9cc2-1797-2219.ngrok-free.app/reports
