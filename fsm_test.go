@@ -4,7 +4,6 @@ import (
 	"errors"
 	"testing"
 	"time"
-
 	"github.com/nbio/st"
 	"github.com/nozim/fsm"
 )
