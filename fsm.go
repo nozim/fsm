@@ -3,7 +3,7 @@ package fsm
 import "errors"
 
 type State string
-
+// test 
 type Guard func(subject Stater, goal State) error
 
 var (
