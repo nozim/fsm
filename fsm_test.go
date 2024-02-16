@@ -20,6 +20,8 @@ func TestSomething(t *testing.T) {
   st.Expect(t,2+2,4)	
 }
 
+
+// another test comment here
 func TestSomeOtherThing(t *testing.T) {
   st.Expect(t, 5, 10-5)
 }
