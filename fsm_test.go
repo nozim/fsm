@@ -8,7 +8,6 @@ import (
 	"github.com/nozim/fsm"
 )
 
-// Thing is a minimal struct that is an fsm.Stater
 type Thing struct {
 	State fsm.State
 }
@@ -20,8 +19,6 @@ func TestSomething(t *testing.T) {
   st.Expect(t,2+2,4)	
 }
 
-
-// another test comment here
 func TestSomeOtherThing(t *testing.T) {
   st.Expect(t, 5, 10-5)
 }
