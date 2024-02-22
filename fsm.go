@@ -10,14 +10,11 @@ var (
 	InvalidTransition = errors.New("invalid transition")
 )
 
-// Transition is the change between States
 type Transition interface {
 	Origin() State
 	Exit() State
 }
 
-// T implements the Transition interface; it provides a default
-// implementation of a Transition.
 type T struct {
 	O, E State
 }
