@@ -6,6 +6,8 @@ type State string
 
 type Guard func(subject Stater, goal State) error
 
+// another commit for test PR
+
 var (
 	InvalidTransition = errors.New("invalid transition")
 )
