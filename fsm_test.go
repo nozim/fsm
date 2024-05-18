@@ -8,6 +8,10 @@ import (
 	"github.com/nozim/fsm"
 )
 
+
+// add sample comment here for sake or PR
+
+
 type Thing struct {
 	State fsm.State
 }
