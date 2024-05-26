@@ -10,7 +10,7 @@ import (
 
 
 // add sample comment here for sake or PR
-
+// test comment here 
 
 type Thing struct {
 	State fsm.State
