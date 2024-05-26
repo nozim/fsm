@@ -6,6 +6,9 @@ type State string
 
 type Guard func(subject Stater, goal State) error
 
+
+
+
 var (
 	InvalidTransition = errors.New("invalid transition")
 )
