@@ -19,6 +19,11 @@ type Thing struct {
 func (t *Thing) CurrentState() fsm.State { return t.State }
 func (t *Thing) SetState(s fsm.State)    { t.State = s }
 
+func TestFooBaz(t *testing.T) {
+	st.Expect(t, 40,10*4)
+}
+
+
 func TestSomeNewFancyTest(t *testing.T) {
 	st.Expect(t, 40,10*4)
 }
